@@ -1,0 +1,216 @@
+/*
+ * Tema de quiosque Fácill para a página pública da Equatorial Pará.
+ * Seletores foram conferidos no HTML fornecido em 27/10/2026.
+ * Não altera JavaScript, requisições, campos, CAPTCHA, OTP, avisos de erro ou
+ * valores. O portal continua identificado como Equatorial.
+ */
+:root {
+  --facill-forest: #063d39;
+  --facill-green: #087567;
+  --facill-lime: #9cdb6b;
+  --facill-mist: #eef5ef;
+  --facill-ink: #12302e;
+  --facill-muted: #58706a;
+}
+
+html, body { min-height: 100%; background: var(--facill-forest) !important; }
+body { color: var(--facill-ink) !important; font-family: Inter, ui-sans-serif, system-ui, sans-serif !important; }
+
+/* O totem só oferece segunda via. Esconde navegação, notícias, banners e
+   rodapé editorial sem ocultar nenhum controle da autenticação. */
+.site-logo-container,
+.site-navigation,
+.background-container,
+.presentation > .container,
+.quick-access,
+.highlight-banner,
+.latest-news,
+footer,
+#get-payment-code { display: none !important; }
+
+.presentation {
+  display: grid !important;
+  min-height: 100vh !important;
+  padding: clamp(24px, 5vw, 72px) !important;
+  place-items: center !important;
+  background:
+    radial-gradient(circle at 90% 8%, rgb(156 219 107 / 32%), transparent 28rem),
+    radial-gradient(circle at 8% 92%, rgb(20 142 120 / 36%), transparent 30rem),
+    var(--facill-forest) !important;
+}
+.site-header { display: grid !important; width: 100% !important; min-height: calc(100vh - clamp(48px, 10vw, 144px)) !important; place-items: center !important; background: transparent !important; }
+.site-header > .container { display: grid !important; width: 100% !important; place-items: center !important; background: transparent !important; }
+/* Sobrescreve a regra original que deixava o painel na coluna direita. */
+.site-header .container > .no-margin.row:first-child { display: grid !important; width: 100% !important; grid-template-columns: 1fr !important; place-items: center !important; }
+.site-header .container > .no-margin.row:first-child > .no-margin.row { display: block !important; width: 100% !important; }
+
+.painel-login {
+  float: none !important;
+  width: min(100%, 460px) !important;
+  max-width: 460px !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+}
+.login-box {
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 18px !important;
+  background: #fff !important;
+  box-shadow: 0 30px 80px rgb(0 0 0 / 30%) !important;
+}
+.login-box::before {
+  content: "Fácill  ·  autoatendimento";
+  display: block;
+  padding: 18px 24px 16px;
+  background: var(--facill-forest);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+}
+.content-login, .content-logged {
+  float: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 24px !important;
+}
+.content-login::before {
+  content: "Consulta de segunda via · Portal oficial Equatorial";
+  display: block;
+  margin: -2px 0 18px;
+  color: var(--facill-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+}
+.content-login h2, .content-logged h2 {
+  margin: 0 !important;
+  color: var(--facill-ink) !important;
+  font-size: clamp(28px, 3vw, 34px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -.055em !important;
+  line-height: 1.02 !important;
+}
+.content-login h3 { margin: 4px 0 20px !important; color: var(--facill-green) !important; font-size: 17px !important; font-weight: 700 !important; }
+.login-box-form p, .content-logged p { color: var(--facill-muted) !important; font-size: 15px !important; line-height: 1.45 !important; }
+.login-box label, .content-logged label { display: block !important; margin: 16px 0 6px !important; color: var(--facill-ink) !important; font-size: 14px !important; font-weight: 750 !important; }
+
+#identificador, #senha-identificador, #identificador-otp, #identificador-2,
+#identificador-conta-contrato, #contrato-muitas-contas, #conta_contrato {
+  width: 100% !important;
+  min-height: 54px !important;
+  padding: 10px 14px !important;
+  border: 2px solid #bdd0c7 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: var(--facill-ink) !important;
+  box-shadow: none !important;
+  font-family: inherit !important;
+  font-size: 17px !important;
+}
+#identificador:focus, #senha-identificador:focus, #identificador-otp:focus,
+#identificador-2:focus, #identificador-conta-contrato:focus, #contrato-muitas-contas:focus, #conta_contrato:focus {
+  border-color: var(--facill-green) !important;
+  outline: 4px solid rgb(156 219 107 / 58%) !important;
+  outline-offset: 1px !important;
+}
+#envia-identificador, #envia-identificador-otp, .content-logged input[type="submit"] {
+  width: 100% !important;
+  min-height: 56px !important;
+  margin: 20px 0 0 !important;
+  padding: 0 24px !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: var(--facill-green) !important;
+  color: #fff !important;
+  font-family: inherit !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  letter-spacing: -.01em !important;
+  box-shadow: 0 10px 22px rgb(8 117 103 / 25%) !important;
+}
+#envia-identificador:hover, #envia-identificador-otp:hover, .content-logged input[type="submit"]:hover { background: #056257 !important; }
+
+/* O botão de saída e seleção de conta são parte da sessão oficial e continuam
+   acessíveis, apenas ganham os mesmos alvos grandes do totem. */
+.content-logged .btn-exit { display: inline-flex !important; align-items: center !important; min-height: 48px !important; padding: 0 16px !important; border: 1px solid #9bb9ae !important; border-radius: 10px !important; color: var(--facill-forest) !important; background: #fff !important; font-weight: 750 !important; }
+/* Não redefinir `.hidden`: o portal usa essa classe e estilos inline para
+   alternar corretamente CPF, nascimento, OTP e seleção de conta. */
+
+/* Aviso LGPD do próprio portal: permanece opcional e legível, mas deixa de
+   competir visualmente com o atendimento. Nenhum botão é acionado pela extensão. */
+#overlay_l { background: rgb(6 61 57 / 62%) !important; backdrop-filter: blur(5px) !important; }
+#lgpd_n {
+  position: fixed !important;
+  z-index: 2147483646 !important;
+  right: 18px !important;
+  bottom: 18px !important;
+  left: auto !important;
+  width: min(380px, calc(100vw - 32px)) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  box-shadow: 0 22px 64px rgb(0 0 0 / 30%) !important;
+}
+#lgpd_box { padding: 0 !important; }
+#lgpd_n .lgpd_content { padding: 18px !important; }
+#lgpd_n .lgpd_title h4 { margin: 0 0 7px !important; color: var(--facill-ink) !important; font-family: inherit !important; font-size: 18px !important; font-weight: 800 !important; letter-spacing: -.035em !important; }
+#lgpd_n .lgpd_body { display: block !important; }
+#lgpd_n .lgpd_body p { margin: 0 0 11px !important; color: var(--facill-muted) !important; font-family: inherit !important; font-size: 13px !important; line-height: 1.38 !important; }
+#lgpd_n .lgpd_col-left, #lgpd_n .lgpd_col-right { float: none !important; width: 100% !important; padding: 0 !important; }
+#lgpd_n input[type="checkbox"] { width: 17px !important; height: 17px !important; margin: 0 7px 0 0 !important; vertical-align: middle !important; accent-color: var(--facill-green) !important; }
+#lgpd_n label, #lgpd_n a { color: var(--facill-forest) !important; font-weight: 700 !important; }
+#lgpd_n .lgpd_button .lgpd_row { display: flex !important; flex-direction: row-reverse !important; gap: 8px !important; margin-top: 12px !important; }
+#lgpd_n .lgpd_button .lgpd_col { flex: 1 !important; width: auto !important; padding: 0 !important; }
+#lgpd_accept, #lgpd_n .lgpd-btn-close {
+  width: 100% !important;
+  min-height: 42px !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  border-radius: 10px !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+#lgpd_accept { border: 0 !important; background: var(--facill-green) !important; color: #fff !important; }
+#lgpd_n .lgpd-btn-close { border: 1px solid #a8c1b7 !important; background: #fff !important; color: var(--facill-forest) !important; }
+
+/* Página autenticada de segunda via (page-id-62). O cabeçalho deixa de ocupar
+   a tela e a lista oficial de faturas vira o foco único do totem. */
+body.page-id-62 .presentation { display: block !important; min-height: auto !important; padding: 22px 0 0 !important; background: var(--facill-forest) !important; }
+body.page-id-62 .site-header { display: block !important; min-height: 0 !important; }
+body.page-id-62 .site-header > .container { display: block !important; }
+body.page-id-62 .site-header .container > .no-margin.row:first-child { display: block !important; }
+body.page-id-62 .site-header .container > .no-margin.row:first-child > .no-margin.row { display: block !important; }
+body.page-id-62 .painel-login { width: min(100% - 32px, 920px) !important; max-width: 920px !important; }
+body.page-id-62 .login-box { border-radius: 14px !important; }
+body.page-id-62 .login-box::before { padding: 14px 22px !important; font-size: 16px !important; }
+body.page-id-62 .content-logged { padding: 18px 22px !important; }
+body.page-id-62 .content-logged h2 { font-size: 26px !important; }
+body.page-id-62 .content-logged p { margin: 3px 0 12px !important; }
+body.page-id-62 .area-selecao-conta { margin: 10px 0 0 !important; }
+body.page-id-62 .select-wrap, body.page-id-62 #uc-picker-card { width: 100% !important; max-width: none !important; }
+body.page-id-62 #uc-picker-card { padding: 16px !important; border: 2px solid #bdd0c7 !important; border-radius: 12px !important; background: var(--facill-mist) !important; }
+body.page-id-62 .inside-title { display: none !important; }
+body.page-id-62 .content-loop { min-height: calc(100vh - 230px) !important; padding: 30px 16px 64px !important; background: var(--facill-mist) !important; }
+body.page-id-62 .content-loop > .container { max-width: 920px !important; }
+body.page-id-62 .content-loop .aside, body.page-id-62 .content-loop .service-logged > .row > .col-sm-6:nth-child(2) { display: none !important; }
+body.page-id-62 .content-loop .service-box { width: 100% !important; max-width: none !important; padding: 0 !important; }
+body.page-id-62 .service-logged { padding: 26px !important; border-radius: 14px !important; background: #fff !important; box-shadow: 0 8px 24px rgb(6 61 57 / 12%) !important; }
+body.page-id-62 .service-logged h2 { margin: 0 0 12px !important; color: var(--facill-ink) !important; font-size: 26px !important; }
+body.page-id-62 #list-bills-segunda-via { width: 100% !important; margin-top: 20px !important; border-collapse: separate !important; border-spacing: 0 10px !important; }
+body.page-id-62 #list-bills-segunda-via tr { background: var(--facill-mist) !important; cursor: pointer !important; }
+body.page-id-62 #list-bills-segunda-via td { padding: 17px !important; border-top: 1px solid #d4e2db !important; border-bottom: 1px solid #d4e2db !important; color: var(--facill-ink) !important; font-size: 17px !important; }
+body.page-id-62 #list-bills-segunda-via td:first-child { border-left: 1px solid #d4e2db !important; border-radius: 12px 0 0 12px !important; }
+body.page-id-62 #list-bills-segunda-via td:last-child { border-right: 1px solid #d4e2db !important; border-radius: 0 12px 12px 0 !important; }
+body.page-id-62 #list-bills-segunda-via tr:hover { outline: 3px solid var(--facill-lime) !important; }
+
+@media (max-width: 640px) {
+  .presentation { padding: 16px !important; }
+  .login-box { border-radius: 18px !important; }
+  .login-box::before, .content-login, .content-logged { padding-right: 22px !important; padding-left: 22px !important; }
+  #lgpd_n { right: 16px !important; bottom: 16px !important; }
+}

@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Fácill Autoatendimento",
+  "version": "0.1.0",
+  "description": "Totem Fácill para consulta e impressão de segunda via da Equatorial Pará.",
+  "action": { "default_title": "Fácill Autoatendimento" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "permissions": ["scripting", "storage", "tabs"],
+  "host_permissions": [
+    "https://pa.equatorialenergia.com.br/*",
+    "https://api-pa-cliente.equatorialenergia.com.br/*"
+  ],
+  "content_scripts": [{
+    "matches": ["https://pa.equatorialenergia.com.br/*"],
+    "css": ["equatorial-theme.css"],
+    "run_at": "document_start"
+  }]
+}

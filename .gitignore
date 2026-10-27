@@ -1,0 +1,8 @@
+node_modules/
+fatura-sync/
+dist/
+coverage/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
